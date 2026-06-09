@@ -1,60 +1,313 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-      }
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem 1.25rem;
-        line-height: 1.6;
-      }
-      h1,
-      h2 {
-        line-height: 1.25;
-      }
-      .meta {
-        color: GrayText;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Privacy Policy</h1>
-    <p class="meta"><strong>Last updated:</strong> 2026-06-09</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy · Coppola Boat Club</title>
+  <meta name="description" content="Privacy Policy for the Coppola Boat Club mobile application." />
+  <style>
+    :root {
+      /* App theme — Mono Blue 2026 */
+      --primary:        #0d0d12;
+      --accent:         #0a2342;  /* deep harbor blue */
+      --accent-light:   #1e3a6b;
+      --splash-bg:      #011a3f;  /* login/splash navy */
+      --gold:           #f8d67c;  /* brand subtitle gold */
+      --background:     #ffffff;
+      --surface-muted:  #f4f5f7;  /* soft grey card */
+      --text:           #0d0d12;
+      --text-secondary: #4b5563;
+      --text-light:     #9aa0a6;
+      --border:         #eceef1;
+      --border-strong:  #d8dbe0;
+    }
 
-    <p>
-      This privacy policy explains how this app handles information.
-    </p>
+    * { box-sizing: border-box; }
 
-    <h2>Information Collection</h2>
-    <p>
-      The app does not collect, store, or share personal information.
-    </p>
+    html { -webkit-text-size-adjust: 100%; }
 
-    <h2>Third-Party Services</h2>
-    <p>
-      The app does not use third-party analytics, advertising, or tracking services.
-    </p>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--surface-muted);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    <h2>Children's Privacy</h2>
-    <p>
-      The app does not knowingly collect personal data from children.
-    </p>
+    /* ── Header (navy splash style) ─────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, var(--splash-bg) 0%, var(--accent) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 56px 24px 64px;
+    }
+    .hero .anchor { font-size: 56px; line-height: 1; margin-bottom: 16px; }
+    .hero .brand {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin: 0;
+    }
+    .hero .brand-sub {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      margin-top: 8px;
+    }
+    .hero .doc-title {
+      margin-top: 28px;
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 1px;
+    }
 
-    <h2>Changes to This Policy</h2>
-    <p>
-      This policy may be updated from time to time. Any changes will be posted on this page.
-    </p>
+    /* ── Card container ─────────────────────────────────────────── */
+    .wrap {
+      max-width: 760px;
+      margin: -32px auto 64px;
+      padding: 0 16px;
+    }
+    .card {
+      background: var(--background);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 40px 32px;
+      box-shadow: 0 12px 28px rgba(13, 13, 18, 0.08);
+    }
 
-    <h2>Contact</h2>
-    <p>
-      For privacy questions, contact: <a href="mailto:support@example.com">support@example.com</a>
-    </p>
-  </body>
+    .updated {
+      display: inline-block;
+      background: var(--surface-muted);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 28px;
+    }
+
+    .intro {
+      color: var(--text-secondary);
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      margin: 40px 0 12px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      color: var(--primary);
+    }
+    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 32px; }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 22px 0 6px;
+      color: var(--accent);
+    }
+
+    p { margin: 0 0 14px; color: var(--text-secondary); }
+
+    ul { margin: 0 0 14px; padding-left: 0; list-style: none; }
+    li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+    li::before {
+      content: "⚓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 13px;
+      color: var(--accent-light);
+    }
+    li strong { color: var(--text); font-weight: 700; }
+
+    a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 13px;
+      padding: 0 24px 56px;
+    }
+    footer .anchor { font-size: 18px; display: block; margin-bottom: 8px; opacity: 0.7; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 44px 20px 56px; }
+      .hero .brand { font-size: 26px; letter-spacing: 3px; }
+      .card { padding: 32px 22px; border-radius: 26px; }
+      h2 { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="anchor">⚓</div>
+    <h1 class="brand">COPPOLA</h1>
+    <div class="brand-sub">— BOAT CLUB —</div>
+    <div class="doc-title">Privacy Policy</div>
+  </header>
+
+  <main class="wrap">
+    <article class="card">
+      <span class="updated">Last updated: June 8, 2026</span>
+
+      <p class="intro">
+        Coppola Boat Club ("CBC", "we", "us", or "our") operates the Coppola Boat Club mobile
+        application. This Privacy Policy explains what personal data we collect, how we use it, and
+        your rights under the General Data Protection Regulation (GDPR). The app is a private,
+        invitation-only application used by a small group of friends, available exclusively to
+        members with a valid invitation code. It is not operated by a registered company or
+        organisation.
+      </p>
+
+      <h2>1. Data Controller</h2>
+      <p>
+        Coppola Boat Club is a private, non-commercial app maintained by a private individual. It is
+        not a registered company or organisation and has no commercial purpose.
+      </p>
+      <p>Contact: <a href="mailto:coppolaboatclub@outlook.com">coppolaboatclub@outlook.com</a></p>
+
+      <h2>2. Data We Collect</h2>
+      <p>When you create an account and use the Coppola Boat Club app, we collect the following information:</p>
+      <ul>
+        <li><strong>Account information:</strong> Email address and password (stored securely via Firebase Authentication).</li>
+        <li><strong>Profile information:</strong> Display name shown to other members (e.g. in chat and bookings).</li>
+        <li><strong>Location data (including background location):</strong> The app automatically records your sailing
+          route and sailing time while you are out on the water — including when the screen is off. We
+          never track your location while you are on land, and location data is never shared with third
+          parties for marketing.</li>
+        <li><strong>Activity data:</strong> Bookings and reservations, chat messages, and fuel/trip records you create in the app.</li>
+        <li><strong>Usage data:</strong> Basic app interaction data collected by Firebase to ensure the service functions correctly.</li>
+      </ul>
+
+      <h2>3. How We Use Your Data</h2>
+      <p>We use your data exclusively to:</p>
+      <ul>
+        <li>Create and manage your account.</li>
+        <li>Show you bookings, messages, and trip records.</li>
+        <li>Record your sailing route and sailing time while you are sailing.</li>
+        <li>Send push notifications about relevant activity (e.g. bookings and messages).</li>
+        <li>Maintain security and prevent unauthorised access.</li>
+      </ul>
+      <p>We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
+
+      <h2>4. Legal Basis (GDPR)</h2>
+      <p>We process your data on the following legal grounds:</p>
+      <ul>
+        <li><strong>Contract (Art. 6(1)(b)):</strong> Processing your email and display name is necessary to provide the service you signed up for.</li>
+        <li><strong>Consent (Art. 6(1)(a)):</strong> Location tracking is enabled with your explicit permission and can be revoked at any time in your device settings.</li>
+        <li><strong>Legitimate interest (Art. 6(1)(f)):</strong> Keeping records of bookings and trips to ensure fair and accurate club management.</li>
+      </ul>
+
+      <h2>5. Third-Party Services</h2>
+      <p>Coppola Boat Club uses the following third-party infrastructure services to operate:</p>
+      <ul>
+        <li><strong>Device location services (Apple Location Services):</strong> Your location is collected via your
+          device's built-in GPS, handled by the operating system. The app only accesses it after you grant
+          permission, and you can revoke this permission at any time in your device settings.</li>
+        <li><strong>Apple Maps (Apple MapKit):</strong> Used to display the map and your recorded sailing route on your
+          device. Map rendering is provided by Apple.</li>
+        <li><strong>Google Firebase (Authentication, Firestore):</strong> Stores your account credentials, profile data,
+          and activity data — including your recorded sailing routes. Data may be stored in EU data centres.
+          See Google's Privacy Policy at <a href="https://privacy.google.com/" target="_blank" rel="noopener">privacy.google.com</a>.</li>
+        <li><strong>Open-Meteo (weather data):</strong> Used to retrieve sailing weather forecasts. The app requests
+          weather for a fixed location (the club's sailing area) only — your personal location is never
+          sent to this service.</li>
+        <li><strong>Apple Push Notification service (APNs):</strong> Used to deliver push notifications to your device.
+          You can disable notifications at any time in your device settings.</li>
+      </ul>
+      <p>Your location data is never shared with any third party for marketing, advertising, or tracking purposes.</p>
+
+      <h2>6. Data Retention</h2>
+      <p>
+        Your account and profile data is retained for as long as your account is active. You can delete
+        your account directly in the app under Profile → Delete account.
+      </p>
+      <p>When you delete your account, the following is removed:</p>
+      <ul>
+        <li>Your profile (email and display name) and your login credentials.</li>
+        <li>Your chat messages.</li>
+      </ul>
+      <p>
+        Certain data created during your membership — such as bookings, fuel records, and trip/sailing
+        records — is necessary for the club's shared operational records and may be retained indefinitely,
+        even after your account is deleted. Where possible, such records are kept without your personal
+        profile attached.
+      </p>
+      <p>
+        If you wish to have this remaining data removed as well, you can request it by contacting us at
+        <a href="mailto:coppolaboatclub@outlook.com">coppolaboatclub@outlook.com</a>, and we will remove it within 30 days, except where
+        retention is required by law.
+      </p>
+
+      <h2>7. Your Rights</h2>
+      <p>Under GDPR, you have the right to:</p>
+
+      <h3>Access</h3>
+      <p>Request a copy of your personal data.</p>
+
+      <h3>Rectification</h3>
+      <p>Correct inaccurate data via your profile settings.</p>
+
+      <h3>Erasure</h3>
+      <p>Request deletion of your account, profile, and chat messages (available directly in the app).
+        Other records may be retained as described in section 6.</p>
+
+      <h3>Portability</h3>
+      <p>Receive your data in a portable format.</p>
+
+      <h3>Objection</h3>
+      <p>Object to processing based on legitimate interests.</p>
+
+      <h3>Restriction</h3>
+      <p>Request that we limit processing of your data.</p>
+
+      <p>
+        To exercise any of these rights, contact us at
+        <a href="mailto:coppolaboatclub@outlook.com">coppolaboatclub@outlook.com</a>. You also
+        have the right to lodge a complaint with the Danish Data Protection Authority
+        (<a href="https://www.datatilsynet.dk/" target="_blank" rel="noopener">datatilsynet.dk</a>).
+      </p>
+
+      <h2>8. Children's Privacy</h2>
+      <p>
+        Coppola Boat Club is not directed at children under the age of 13. We do not knowingly collect
+        personal data from children under 13. If you believe a child has provided us with personal data,
+        please contact us and we will delete it promptly.
+      </p>
+
+      <h2>9. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. When we do, we will update the "Last updated"
+        date at the top of this page. Continued use of the app after changes constitutes acceptance of the
+        updated policy.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>
+        For any privacy-related questions or requests, please contact us at
+        <a href="mailto:coppolaboatclub@outlook.com">coppolaboatclub@outlook.com</a>.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <span class="anchor">⚓</span>
+    Coppola Boat Club · Private, invitation-only sailing app
+  </footer>
+</body>
 </html>
