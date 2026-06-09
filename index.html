@@ -42,38 +42,60 @@
 
     /* ── Header (navy splash style) ─────────────────────────────── */
     .hero {
+      position: relative;
       background: linear-gradient(160deg, var(--splash-bg) 0%, var(--accent) 100%);
       color: #fff;
       text-align: center;
-      padding: 80px 24px 96px;
+      padding: 44px 24px 72px;
+      overflow: hidden;
+    }
+    /* subtle gold hairline at the bottom edge */
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.55;
     }
     .hero-inner { max-width: 1200px; margin: 0 auto; }
-    .hero .anchor { font-size: 64px; line-height: 1; margin-bottom: 18px; }
+    .hero .anchor {
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 14px;
+      opacity: 0.9;
+    }
     .hero .brand {
-      font-size: 42px;
+      font-size: 38px;
       font-weight: 900;
-      letter-spacing: 6px;
+      letter-spacing: 7px;
       margin: 0;
     }
     .hero .brand-sub {
       color: var(--gold);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 6px;
-      margin-top: 10px;
+      margin-top: 9px;
     }
     .hero .doc-title {
-      margin-top: 36px;
-      font-size: 17px;
+      display: inline-block;
+      margin-top: 26px;
+      padding: 7px 18px;
+      font-size: 13px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.78);
-      letter-spacing: 1.5px;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 9999px;
+      backdrop-filter: blur(4px);
     }
 
     /* ── Card container ─────────────────────────────────────────── */
     .wrap {
       max-width: 1200px;
-      margin: -48px auto 80px;
+      margin: -40px auto 80px;
       padding: 0 24px;
     }
     .card {
@@ -164,11 +186,11 @@
     /* ── Mobile ─────────────────────────────────────────────────── */
     @media (max-width: 600px) {
       body { font-size: 17px; }
-      .hero { padding: 56px 20px 72px; }
-      .hero .anchor { font-size: 52px; }
-      .hero .brand { font-size: 30px; letter-spacing: 4px; }
-      .hero .doc-title { margin-top: 26px; font-size: 15px; }
-      .wrap { padding: 0 16px; margin-top: -36px; }
+      .hero { padding: 36px 20px 56px; }
+      .hero .anchor { font-size: 30px; }
+      .hero .brand { font-size: 28px; letter-spacing: 5px; }
+      .hero .doc-title { margin-top: 22px; font-size: 12px; }
+      .wrap { padding: 0 16px; margin-top: -32px; }
       .card { padding: 32px 24px; border-radius: 24px; }
       .intro { font-size: 17px; }
       h2 { font-size: 22px; margin-top: 44px; padding-top: 32px; }
